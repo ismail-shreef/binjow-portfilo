@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/all.min.css">
+    <link rel="stylesheet" href="Css/lightbox.css">
+    <link rel="stylesheet" href="Css/mine.css">
+    <link rel="stylesheet" href="Css/bootstrap.min.css">
+    <title>Mohamed Hamdy</title>
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: black;
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        nav {
+            backdrop-filter: blur(3px);
+        }
+
+        nav .navbar-toggler {
+            color: red;
+        }
+
+        .logo {
+            color: red;
+        }
+
+        nav .nav-item a {
+            color: red;
+            font-size: larger;
+            font-weight: 800;
+            margin-right: 15px;
+            transition: 0.3s ease;
+        }
+
+        nav .nav-item a:hover {
+            background-color: red;
+            color: #fff;
+            border-radius: 30px;
+        }
+
+        .highlight {
+            color: red;
+            font-weight: bold;
+            font-size: 4rem;
+            line-height: 1;
+        }
+
+        .intro-text {
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .red-frame {
+            position: relative;
+            display: inline-block;
+            border: 4px solid red;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .red-smile {
+            position: relative;
+            display: inline-block;
+            color: red;
+            font-size: 2rem;
+            margin-left: 10px;
+        }
+
+        .img-style {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .highlight {
+                font-size: 2.5rem;
+            }
+        }
+
+        h2.title {
+            color: white;
+            font-weight: bold;
+            font-size: 3rem;
+        }
+
+        h2.title span {
+            color: red;
+        }
+
+        h4 {
+            color: red;
+            margin-top: 30px;
+            font-weight: 800;
+        }
+
+        .section-title {
+            color: red;
+            font-weight: bold;
+        }
+
+        .icon {
+            color: red;
+            width: 25px;
+            display: inline-block;
+        }
+
+        a,
+        a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        .content-list li {
+            margin-bottom: 8px;
+        }
+
+        .line {
+            width: 250px;
+            height: 3px;
+            margin: 4px;
+            background-color: red;
+        }
+
+        .banner {
+            background-color: #000;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-text {
+            font-size: 3.5rem;
+            font-weight: bold;
+            line-height: 1;
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .main-text span {
+            margin: 0 5px;
+        }
+
+        .main-text .red-o {
+            color: #ff0000;
+            font-size: 3.5rem;
+        }
+
+        .sub-text {
+            font-size: .9rem;
+            color: #ff0000;
+            font-weight: bold;
+            /* margin-top: 3px; */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .main-text {
+                font-size: 2.5rem;
+            }
+
+            .main-text .red-o {
+                font-size: 2.5rem;
+            }
+
+            .sub-text {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .main-text {
+                font-size: 1.8rem;
+            }
+
+            .main-text .red-o {
+                font-size: 1.8rem;
+            }
+
+            .sub-text {
+                font-size: 1rem;
+            }
+
+            .banner {
+                padding: 20px 0;
+            }
+        }
+
+        .winzo-title {
+            color: red;
+            font-weight: bold;
+            font-size: 2.5rem;
+        }
+
+        .card {
+            background-color: #222;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            color: white;
+        }
+
+        .card img {
+            object-fit: cover;
+            height: 200px;
+        }
+
+        .promo {
+            background-color: #c00;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .section-title {
+            color: #ff0000;
+            /* لون أحمر لـ WINZO */
+            font-family: 'Montserrat', sans-serif;
+            /* خط مميز لعنوان WINZO */
+            font-weight: 900;
+            /* أثقل */
+        }
+
+        .card-custom {
+            background-color: #1a1a1a;
+            /* خلفية داكنة قليلاً للبطاقات */
+            border: none;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            /* حواف مستديرة قليلاً للبطاقات */
+        }
+
+        .card-img-overlay-custom {
+            position: absolute;
+            top: 0;
+            right: 0;
+            /* في RTL، اليمين هو البداية */
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            /* زيادة المسافة البادئة قليلاً */
+            color: #fff;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%);
+            /* تدرج داكن أكثر للأسفل */
+            text-align: right;
+            /* محاذاة النص لليمين */
+        }
+
+        .card-img-custom {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            /* حواف مستديرة للصور أيضًا */
+        }
+
+        .card-title-overlay {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            /* ظل خفيف للنص */
+        }
+
+        .academy-tag {
+            font-size: 0.9em;
+            color: #ccc;
+            opacity: 0.8;
+        }
+
+        .krak-next-logo {
+            width: 180px;
+            /* تعديل الحجم ليناسب */
+            height: auto;
+            filter: brightness(0) invert(1);
+            /* لجعل الشعار أبيض بالكامل بغض النظر عن اللون الأصلي */
+            /* للحصول على شكل الشعار "Krak's Next" بالخط الملتوي، ستحتاج إلى صورة SVG أو PNG شفافة لهذا الشعار */
+        }
+
+        .panda-icon {
+            max-width: 90%;
+            /* حجم الباندا */
+            height: auto;
+            display: block;
+            /* للتأكد من توسيطه بشكل صحيح */
+            margin: auto;
+            /* لتوسيته */
+        }
+
+        /* أنماط خاصة للأقسام لتطابق تخطيط الصورة */
+        .winzo-brand-section {
+            padding-top: 4rem;
+            /* زيادة المسافة العلوية */
+            padding-bottom: 4rem;
+            /* زيادة المسافة السفلية */
+        }
+
+        .promo-grid {
+            padding-bottom: 4rem;
+            /* زيادة المسافة السفلية */
+        }
+
+        .lead {
+            font-size: 1.25rem;
+            color: #e0e0e0;
+        }
+
+        .promo-card-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            /* حجم أكبر للنص داخل البطاقات */
+            text-align: center;
+            /* توسيط النص داخل البطاقات */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            /* للحفاظ على النص داخل حدود البطاقة */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+            /* ظل أقوى للنص */
+        }
+
+        /* لتغيير اتجاه السهم في Krak's Next */
+        .arrow-rtl {
+            transform: scaleX(-1);
+            /* يعكس السهم أفقياً */
+            display: inline-block;
+            /* ليتأثر بالتحويل */
+            color: #fff;
+            font-size: 2.5rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top text-center" id="navbar">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main"
+                aria-controls="main" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="logo-div p-1">
+                <a class="logo fs-2 fw-bold text-decoration-none" href="#"><span style="color: white;">B</span>injow</a>
+            </div>
+            <div class="collapse navbar-collapse flex-grow-0" id="main">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="nav-links">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link p-lg-3">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link p-lg-3">About me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#mywork" class="nav-link p-lg-3">Our Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-lg-3" href="#contactme">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <!-- النص -->
+            <div class="col-md-6 text-center text-md-start">
+                <div class="mb-4">
+                    <span class="highlight">Hello</span>
+                    <span class="text-white d-block fs-5">I'm <strong>Mohamed Hamdy</strong></span>
+                </div>
+                <p class="intro-text">
+                    A graphic designer who loves to create unique works, full of details<br>
+                    to highlight the meaning of the project or that serve<br>
+                    to convey information in an improved and easy way<br>
+                    I aspire to leave a mark and a good impression on every client<br>
+                    to remember me with something good and a nice smile.
+                </p>
+            </div>
+
+            <!-- الصورة -->
+            <div class="col-md-6 text-center">
+                <div class="red-frame">
+                    <img src="Media/team1.png" alt="Mohamed Hamdy" class="img-style" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container py-5" id="about">
+        <h2 class="text-center title">ABOUT <span style="color: red;">M</span>E</h2>
+
+        <div class="row mt-4">
+            <!-- Experience -->
+            <div class="col-md-6">
+                <h4>EXPERIENCE</h4>
+
+                <p><strong style="color: red;">● CUBEDGES</strong> Digital marketing agency</p>
+                <p>Internship Graphic Designer (10.2020 – 5.2021)<br>
+                    Junior Graphic Designer (5.2021 – 12.2021)<br>
+                    <strong>'ONSITE'</strong>
+                </p>
+                <p style="color: red;">MY TASKS</p>
+                <ul class="content-list list-unstyled">
+                    <li>- Design social media posts for clients.</li>
+                    <li>- Design Flyers and banners for printing.</li>
+                    <li>- Product box and bag cover design.</li>
+                </ul>
+                <div class="line"></div>
+                <p><strong style="color: red;">● CONDA</strong> Digital marketing agency</p>
+                <p>Mid level Graphic Designer (3.2022 – 3.2024)<br>
+                    <strong>'ONSITE'</strong>
+                </p>
+                <p style="color: red;">MY TASKS</p>
+                <ul class="content-list list-unstyled">
+                    <li>- Design social media posts for clients.</li>
+                    <li>- Design Flyers and banners for printing.</li>
+                    <li>- Product box and bag cover design.</li>
+                    <li>- Design Thumbnails for Facebook, YouTube and TikTok.</li>
+                    <li>- Photography of clothing and food products.</li>
+                </ul>
+                <div class="line"></div>
+                <p><strong style="color: red;">● Red Octopus</strong> Digital marketing agency</p>
+                <p>Mid level Graphic Designer (5.2022 – 9.2024)<br>
+                    <strong>'REMOTELY'</strong>
+                </p>
+                <p style="color: red;">MY TASKS</p>
+                <ul class="content-list list-unstyled">
+                    <li>- Design social media posts for clients.</li>
+                    <li>- Design Flyers and banners for printing.</li>
+                    <li>- Product box and bag cover design.</li>
+                </ul>
+            </div>
+
+            <!-- Personal Info, Education, Skills -->
+            <div class="col-md-6">
+                <h4>PERSONAL INFO</h4>
+                <ul class="list-unstyled content-list">
+                    <li><span class="icon"><i class="fas fa-location-dot"></i></span> Damanhour - El Beheira - Egypt
+                    </li>
+                    <li><span class="icon"><i class="fab fa-linkedin"></i></span> <a
+                            href="#">linkedin.com/in/mohamed-hamdy258</a></li>
+                    <li><span class="icon"><i class="fab fa-behance"></i></span> <a
+                            href="#">behance.net/kotta00887775</a></li>
+                    <li><span class="icon"><i class="fas fa-envelope"></i></span> kotta0088@gmail.com</li>
+                    <li><span class="icon"><i class="fas fa-phone"></i></span> +20 01099590469</li>
+                </ul>
+                <div class="line"></div>
+                <h4>EDUCATION</h4>
+                <p><span class="icon"><i class="fas fa-circle"></i></span>EG Academy of Computers and Information
+                    Technology<br>
+                    Administration – Tanta<br>
+                    (8.20 – 10.15)</p>
+                <div class="line"></div>
+                <h4>SKILLS</h4>
+                <ul class="content-list list-unstyled">
+                    <li><span class="icon"><i class="fas fa-circle"></i></span> Social Media Design</li>
+                    <li><span class="icon"><i class="fas fa-circle"></i></span> Branding Identity</li>
+                    <li><span class="icon"><i class="fas fa-circle"></i></span> Packaging Design</li>
+                    <li><span class="icon"><i class="fas fa-circle"></i></span> Time Management</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid banner" id="mywork">
+        <div class="banner-content">
+            <div class="main-text">
+                <p class="fs-5">LET 'S
+                    TAKE
+                    A</p>
+                <span>L<span class="red-o">O</span><span class="white-o">O</span>K</span>
+            </div>
+            <div class="sub-text">
+                ON A LITTLE OF WHAT I DONE
+            </div>
+        </div>
+    </div>
+    <div class="container py-5">
+
+        <div class="row g-4">
+            <div class="col-6">
+                <div class="winzo-title">WINZO</div>
+                <p>Winzo Brand is a training and fitness academy offering good deals time to time.</p>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="Media/p1.png" class="card-img-top" alt="Trainer">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card text-center" data-work="application">
+                    <a href="Media/team1.png" data-lightbox="roadtrip"><img src="Media/team1.png" alt=""
+                            class="img-fluid"></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center" data-work="application">
+                    <a href="Media/team1.png" data-lightbox="roadtrip"><img src="Media/team1.png" alt=""
+                            class="img-fluid"></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center" data-work="application">
+                    <a href="Media/team1.png" data-lightbox="roadtrip"><img src="Media/team1.png" alt=""
+                            class="img-fluid"></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center" data-work="application">
+                    <a href="Media/team1.png" data-lightbox="roadtrip"><img src="Media/team1.png" alt=""
+                        class="img-fluid"></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center" data-work="application">
+                        <a href="Media/team1.png" data-lightbox="roadtrip"><img src="Media/team1.png" alt=""
+                            class="img-fluid"></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-center" data-work="application">
+                            <a href="Media/p5.jpg" data-lightbox="roadtrip"><img src="Media/p5.jpg" alt=""
+                                    class="img-fluid"></a>
+                        </div>
+                    </div>
+                </div>
+    </div>
+    <div class="container-fluid banner">
+        <div class="banner-content">
+            <div class="main-text mb-5">
+                <span><span class="red-o">P</span>A<span class="white-o">CKAGI</span>NG</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <div class="box mb-3 bg-red" data-work="application">
+                    <a href="Media/p1.png" data-lightbox="roadtrip"><img src="Media/p1.png" alt=""
+                            class="img-fluid"></a>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="box mb-3 bg-red" data-work="application">
+                    <a href="Media/p2.png" data-lightbox="roadtrip"><img src="Media/p2.png" alt=""
+                            class="img-fluid"></a>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="box mb-3 bg-red" data-work="application">
+                    <a href="Media/p3.png" data-lightbox="roadtrip"><img src="Media/p3.png" alt=""
+                            class="img-fluid"></a>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="box mb-3 bg-red" data-work="application">
+                    <a href="Media/p4.png" data-lightbox="roadtrip"><img src="Media/p4.png" alt=""
+                            class="img-fluid"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container my-5" id="contactme">
+        <h2 class="text-center title fw-bold mb-5">Contact <span style="color: red;">U</span>s</h2>
+        <div class="row g-4">
+
+            <!-- الهاتف -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card text-center shadow rounded-4">
+                    <div class="card-body">
+                        <i class="fas fa-phone fa-2x mb-3" style="color: red;"></i>
+                        <h5 class="card-title"> Phone</h5>
+                        <p class="card-text"> +20 01099590469</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- الموقع -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card text-center shadow rounded-4">
+                    <div class="card-body">
+                        <i class="fas fa-map-marker-alt fa-2x mb-3" style="color: red;"></i>
+                        <h5 class="card-title">Address</h5>
+                        <p class="card-text"> Damanhour - El Beheira - Egypt</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card text-center shadow rounded-4">
+                    <div class="card-body">
+                        <i class="fas fa-envelope fa-2x mb-3" style="color: red;"></i>
+                        <a href="#" class="text-decoration-none">
+                            <h5 class="card-title">Email Address</h5>
+                            <p class="card-text">kotta0088@gmail.com</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card text-center shadow rounded-4">
+                    <div class="card-body">
+                        <i class="fab fa-behance fa-2x mb-3" style="color: red;"></i>
+                        <a href="#" class="text-decoration-none">
+                            <h5 class="card-title">Behance</h5>
+                            <p class="card-text">behance.net/kotta00887775</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card text-center shadow rounded-4">
+                    <div class="card-body">
+                        <i class="fab fa-linkedin fa-2x mb-3" style="color: red;"></i>
+                        <a href="#" class="text-decoration-none">
+                            <h5 class="card-title">Linkedin</h5>
+                            <p class="card-text">/in/mohamed-hamdy258</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- واتساب -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card text-center shadow rounded-4">
+                    <div class="card-body">
+                        <i class="fab fa-whatsapp fa-2x mb-3" style="color: red;"></i>
+                        <a href="#" class="text-decoration-none">
+                            <h5 class="card-title">What's app</h5>
+                            <p class="card-text"> +20 01099590469</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- فيسبوك -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card text-center shadow rounded-4">
+                    <div class="card-body">
+                        <i class="fab fa-facebook-f fa-2x mb-3" style="color: red;"></i>
+                        <a href="#" class="text-decoration-none">
+                            <h5 class="card-title">Facebook</h5>
+                            <p class="card-text"></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card text-center shadow rounded-4">
+                    <div class="card-body">
+                        <i class="fab fa-x-twitter fa-2x mb-3" style="color: red;"></i>
+                        <a href="#" class="text-decoration-none">
+                            <h5 class="card-title">twitter</h5>
+                            <p class="card-text"></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- انستغرام -->
+
+            <!-- لينكدإن -->
+
+
+        </div>
+    </div>
+    <div class="footer pt-5 pb-5 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="info row">
+                        <div class="col-12">
+                            <h5>All <span style="color: red;">R</span>ight For</h5>
+                            <p class="fw-bold"><span style="color: red;">M</span>ohamed <span
+                                    style="color: red;">H</span>.ahmed&copy;</p>
+                        </div>
+                        <div class="col-12">
+                            Created By <span>Ismail</span>
+                            <div>&copy;2025 - <span>loje Inc</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="links">
+                        <h3 class="fw-bold mt-3">Link<span style="color: red;">s</span></h3>
+                        <ul class="list-unstyled text-center justify-content-center align-items-center">
+                            <li><a href="#" class="fs-4"><i class="fab fa-facebook-f facebook rounded-circle p-1"
+                                        style="color: red;" title="facebook"></i>Facebook</a></li>
+                            <li><a href="#" class="fs-4"><i class="fab fa-x-twitter twitter rounded-circle p-1"
+                                        style="color: red;" title="twitter"></i>Twitter</a></li>
+                            <li><a href="#" class="fs-4"><i class="fab fa-instagram instagram rounded-circle p-1"
+                                        style="color: red;" title="instagram"></i>Instagram</a></li>
+                            <li><a href="#" class="fs-4"><i class="fab fa-linkedin-in linkedin rounded-circle p-1"
+                                        style="color: red;" title="linkedin"></i>Linkedin</a></li>
+                            <li><a href="#" class="fs-4"><i class="fab fa-whatsapp whatsapp rounded-circle p-1"
+                                        style="color: red;" title="whatsapp"></i>What's app</a></li>
+                            <li><a href="#" class="fs-4"><i class="fab fa-behance  rounded-circle p-1"
+                                        style="color: red;" title="behance"></i>Behance</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 text-center align-items-center">
+                    <div class="contact">
+                        <h3 class="fw-bold">Contact <span style="color: red;">M</span>e</h3>
+                        <ul class="list-unstyled">
+                            <li><a href="mailto:kotta0088@gmail.com/text=راسلنا"><i class="fas fa-envelope "
+                                        style="color: red;"></i> kotta0088@gmail.com</a></li>
+                            <li><a href="tel:+201099590469"><i class="fas fa-phone" style="color:red;"></i>
+                                    +201099590469</a>
+                            </li>
+                            <li><a href="#"><i class="fas fa-map-marker-alt" style="color: red;"></i> Damanhour - El
+                                    Beheira -
+                                    Egypt</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="JS/all.min.js"></script>
+    <script src="JS/lightbox-plus-jquery.js"></script>
+    <script src="JS/bootstrap.bundle.js"></script>
+</body>
+
+</html>
